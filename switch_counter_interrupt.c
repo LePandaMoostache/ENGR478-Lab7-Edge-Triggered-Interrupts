@@ -125,7 +125,7 @@ void GPIOPortF_Handler(void)
 		GPIO_PORTF_ICR_R |= 0x10; 
 		
 		//SW1 is pressed
-		if(((GPIO_PORTF_DATA_R&0x10)==0x00) && (GPIO_PORTF_DATA_R&0x00)!=0x00) 
+		if(((GPIO_PORTF_DATA_R&0x10)==0x00)) 
 		{
 			//counter imcremented by 1
 			count++;
@@ -139,7 +139,7 @@ void GPIOPortF_Handler(void)
 		// acknowledge flag for PF0
 		GPIO_PORTF_ICR_R |= 0x01; 
 		
-		if(((GPIO_PORTF_DATA_R&0x01)==0x00) && (GPIO_PORTF_DATA_R&0x10)!=0x00) 
+		if(((GPIO_PORTF_DATA_R&0x01)==0x00)) 
 		{
 			//counter imcremented by 1
 			count--;
